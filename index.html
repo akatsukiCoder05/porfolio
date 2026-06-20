@@ -962,9 +962,146 @@
     .stats-dashboard { grid-template-columns: repeat(2, 1fr); }
     .contact-links-grid { grid-template-columns: 1fr; }
   }
+
+  @media (max-width: 768px) {
+    section {
+      padding: 80px 20px 60px;
+    }
+    
+    .scroll-indicator-dot {
+      display: none;
+    }
+
+    .project-img-wrap {
+      height: 200px;
+      min-height: auto;
+    }
+
+    /* Mobile Timeline Layout */
+    .timeline-container::before, .timeline-track-glow {
+      left: 20px;
+      transform: none;
+    }
+    .timeline-node {
+      width: 100%;
+      padding-left: 45px;
+      padding-right: 0;
+      text-align: left !important;
+    }
+    .timeline-node.left, .timeline-node.right {
+      left: 0;
+    }
+    .timeline-node.left .timeline-marker, .timeline-node.right .timeline-marker {
+      left: 12px;
+      right: auto;
+    }
+  }
+
   @media (max-width: 640px) {
-    nav { padding: 12px 20px; width: 95%; }
-    .nav-links { display: none; }
+    nav { 
+      padding: 10px 15px; 
+      width: 95%; 
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      border-radius: 20px;
+    }
+    .nav-logo {
+      font-size: 20px;
+    }
+    .nav-links { 
+      display: flex; 
+      gap: 10px; 
+      overflow-x: auto; 
+      flex: 1;
+      justify-content: flex-start;
+      -webkit-overflow-scrolling: touch;
+      padding: 2px 0;
+    }
+    .nav-links::-webkit-scrollbar {
+      display: none;
+    }
+    .nav-links {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .nav-links li {
+      flex-shrink: 0;
+    }
+    .nav-links a {
+      font-size: 11px;
+      padding: 4px 8px;
+      letter-spacing: 0.5px;
+    }
+    .nav-indicator {
+      display: none !important;
+    }
+    
+    .section-title {
+      font-size: 32px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+    }
+    
+    /* Scale down Hero elements for mobile */
+    .hero-right {
+      width: 300px;
+      height: 300px;
+      margin: 40px auto 0;
+    }
+    .pfp-frame {
+      width: 180px;
+      height: 180px;
+    }
+    .orbit-ring {
+      width: 220px;
+      height: 220px;
+    }
+    .orbit-ring-2 {
+      width: 250px;
+      height: 250px;
+    }
+    .energy-sphere {
+      width: 210px;
+      height: 210px;
+    }
+    .holo-circle.c1 { width: 240px; height: 240px; }
+    .holo-circle.c2 { width: 260px; height: 260px; }
+    
+    /* Position of HUD cards on mobile */
+    .hud-stat-card {
+      padding: 6px 12px;
+      min-width: 80px;
+    }
+    .hud-stat-card .val { font-size: 14px; }
+    .hud-stat-card .lbl { font-size: 9px; }
+    
+    .hud-stat-card.top-left { top: 0px; left: -10px; }
+    .hud-stat-card.top-right { top: 0px; right: -10px; }
+    .hud-stat-card.bottom-left { bottom: 0px; left: -10px; }
+    .hud-stat-card.bottom-right { bottom: 0px; right: -10px; }
+
+    /* Radar panel responsive sizing */
+    .skills-radar-panel {
+      height: 300px;
+    }
+    .radar-svg {
+      width: 280px;
+      height: 280px;
+    }
+
+    /* SVG Tech Universe constellation height adjustment */
+    .tech-universe {
+      height: 200px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .achieve-badges { grid-template-columns: 1fr; }
+    .stats-dashboard { grid-template-columns: 1fr; }
+  }
 </style>
 
 </head>
